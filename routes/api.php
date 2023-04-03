@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/clients/{email}', [ClientContoller::class, 'index'])->name('index');
+Route::get('/connectPsql', [ClientContoller::class, 'connectPsql'])->name('connectPsql');

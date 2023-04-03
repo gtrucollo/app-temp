@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientContoller extends Controller
 {
@@ -15,5 +15,11 @@ class ClientContoller extends Controller
         }
 
         return $client->toJson();
+    }
+
+    public function connectPsql()
+    {
+        $raw = DB::connection('pgsql')->getPdo();
+        dd($raw);
     }
 }
